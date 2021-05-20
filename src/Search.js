@@ -8,6 +8,7 @@ export default function Search() {
     const [pokemonData, setpokemonData] = useState([]);
     const [pokemonType, setPokemonType] = useState("");
     const [showModal, setShowModal] = useState(false);
+    const [addTeam, setTeam] = useState(false);
 
     const getPokemon = async () => {
         const pokemonList = [];
@@ -24,6 +25,10 @@ export default function Search() {
     const showDetails = (e) => {
 
         setShowModal(true);
+    }
+    const myTeam = (e) => {
+
+        setTeam(true);
     }
 
 
@@ -42,6 +47,7 @@ export default function Search() {
     return (
         <div>
             {showModal && <Details pokeinfo={pokemonData} />}
+            {addTeam && <Team pokeinfo={pokemonData} />}
             <form onSubmit={submit}>
                 <label>
                     <input type="text"
@@ -77,7 +83,7 @@ export default function Search() {
 
 
                         </div>
-                        <button type="button" className="btn btn-primary" onClick={Team}>Add to team</button>
+                        <button type="button" className="btn btn-primary" onClick={myTeam}>Add to team</button>
                         <button type="button" className="btn btn-primary" onClick={showDetails}>Details</button>
                         <button type="button" className="btn btn-primary" onClick={getPokemon}>Show team</button>
 
