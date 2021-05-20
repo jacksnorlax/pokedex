@@ -1,10 +1,16 @@
-import React, { useState, UseRef} from 'react';
+import React from 'react';
+import Search from './Search'
 
 export default function Team() {
 
-    return (
-        <div>
+    var team = localStorage.getItem("team");
 
-        </div>
-    )
+    if (team == null) {
+        localStorage.setItem("team", JSON.stringify([]));
+        return [];
+
+    } else {
+        return JSON.parse(team);
+    }
+
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import Search from './Search';
 
+
 import './App.css';
 
 
@@ -9,7 +10,8 @@ const App = () => {
     <div>
       <h1>Pokedex</h1>
       <Search />
-      
+
+
     </div>
   );
 }
