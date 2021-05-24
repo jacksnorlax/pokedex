@@ -31,10 +31,6 @@ export default function Details(props) {
 
 
 
-
-
-
-
     return (
 
         < Modal show={true} >
@@ -42,13 +38,14 @@ export default function Details(props) {
             <Modal.Body>
 
             <div>
-              {props.pokeinfo[0].name}
+              {allInfo.name}
             </div>
             <div>
-              Pokedex number {props.pokeinfo[0].id}
-            </div>
-            <div>
+              Pokedex number {allInfo.id}
 
+            </div>
+            <div>
+              {abilities.map((data) => <p> {data.ability.name} </p>)}
             </div>
 
 
