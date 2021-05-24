@@ -26,6 +26,8 @@ export default function Search() {
 
         setShowModal(true);
     }
+
+
     const myTeam = (e) => {
 
         setTeam(true);
@@ -41,12 +43,18 @@ export default function Search() {
         getPokemon();
     }
 
+    const hideDetails = (e) => {
+
+        setShowModal(false);
+        console.log("125125135wfsef")
+    }
+
 
 
 
     return (
         <div>
-            {showModal && <Details pokeinfo={pokemonData} />}
+            {showModal && <Details pokeinfo={pokemonData} hideModal={hideDetails} />}
             {addTeam && <Team pokeinfo={pokemonData} />}
             <form onSubmit={submit}>
                 <label>
