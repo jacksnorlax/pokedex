@@ -51,7 +51,7 @@ export default function Details(props) {
 
 
             </Modal.Body>
-            <Modal.Footer><button> Close</button></Modal.Footer>
+            <Modal.Footer><button onClick={props.hideModal}> Close</button></Modal.Footer>
 
         </Modal >
 
