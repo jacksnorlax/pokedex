@@ -8,6 +8,9 @@ export default function Team(props) {
   var myTeam = localStorage.getItem("myTeam");
   var pokeList = props.poke()
   console.log(pokeList)
+  for (var i = 0; i < pokeList.length; i++) {
+    console.log(pokeList[i][0].name);
+  }
 
   return (
 

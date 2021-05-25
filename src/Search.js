@@ -2,6 +2,7 @@ import React, { useState, UseRef, useEffect } from 'react';
 import axios from 'axios';
 import Details from './Details'
 import Team from './Team'
+import { propTypes } from 'react-bootstrap/esm/Image';
 
 export default function Search() {
     const [pokemon, setPokemon] = useState([]);
@@ -39,6 +40,8 @@ export default function Search() {
         if (myTeam === null) {
 
             localStorage.setItem("myTeam", JSON.stringify([]));
+
+
 
             return [];
         } else {
@@ -83,7 +86,7 @@ export default function Search() {
     return (
         <div>
             {showModal && <Details pokeinfo={pokemonData} hideModal={hideDetails} />}
-            {showTeam && <Team hideModal={hideTeam}  poke = {loadPokemons}/>}
+            {showTeam && <Team hideModal={hideTeam} poke={loadPokemons} />}
 
             <form onSubmit={submit}>
                 <label>
