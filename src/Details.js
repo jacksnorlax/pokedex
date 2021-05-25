@@ -7,9 +7,9 @@ export default function Details(props) {
     const abilities = allInfo.abilities;
     const stats = allInfo.stats;
     const moves = allInfo.moves;
-    console.log(stats);
+
     console.log(allInfo);
-    console.log(abilities);
+
 
 
 

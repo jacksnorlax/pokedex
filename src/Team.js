@@ -5,6 +5,9 @@ import Search from './Search'
 
 export default function Team(props) {
 
+  var myTeam = localStorage.getItem("myTeam");
+  var pokeList = props.poke()
+  console.log(pokeList)
 
   return (
 
@@ -14,6 +17,7 @@ export default function Team(props) {
         <Modal.Body>
 
           <div>
+
 
           </div>
           <div>
