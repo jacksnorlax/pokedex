@@ -8,7 +8,8 @@ export default function Search() {
     const [pokemonData, setpokemonData] = useState([]);
     const [pokemonType, setPokemonType] = useState("");
     const [showModal, setShowModal] = useState(false);
-    const [addTeam, setTeam] = useState(false);
+    const [showTeam, setShowTeam] = useState(false);
+
 
     const getPokemon = async () => {
         const pokemonList = [];
@@ -26,12 +27,16 @@ export default function Search() {
 
         setShowModal(true);
     }
+    const showjajaja = (e) => {
+
+        setShowTeam(true);
+    }
 
     function loadPokemons() {
-      var myTeam = localStorage.getItem("myTeam");
+        var myTeam = localStorage.getItem("myTeam");
 
 
-        if(myTeam === null) {
+        if (myTeam === null) {
 
             localStorage.setItem("myTeam", JSON.stringify([]));
 
@@ -44,11 +49,11 @@ export default function Search() {
 
 
     const myTeam = (e) => {
-      const teamPokemons = loadPokemons();
-      teamPokemons.push(pokemonData);
-      localStorage.setItem("myTeam", JSON.stringify(teamPokemons));
+        const teamPokemons = loadPokemons();
+        teamPokemons.push(pokemonData);
+        localStorage.setItem("myTeam", JSON.stringify(teamPokemons));
 
-      //setTeam(true);
+
     }
 
 
@@ -66,6 +71,11 @@ export default function Search() {
         setShowModal(false);
         console.log("125125135wfsef")
     }
+    const hideTeam = (e) => {
+
+        setShowTeam(false);
+        console.log("125125135wfsef")
+    }
 
 
 
@@ -73,7 +83,8 @@ export default function Search() {
     return (
         <div>
             {showModal && <Details pokeinfo={pokemonData} hideModal={hideDetails} />}
-            
+            {showTeam && <Team hideModal={hideTeam} />}
+
             <form onSubmit={submit}>
                 <label>
                     <input type="text"
@@ -111,7 +122,7 @@ export default function Search() {
                         </div>
                         <button type="button" className="btn btn-primary" onClick={myTeam}>Add to team</button>
                         <button type="button" className="btn btn-primary" onClick={showDetails}>Details</button>
-                        <button type="button" className="btn btn-primary" onClick={getPokemon}>Show team</button>
+                        <button type="button" className="btn btn-primary" onClick={showjajaja}>Show team</button>
 
                     </div>
                 )
