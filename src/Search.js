@@ -27,10 +27,28 @@ export default function Search() {
         setShowModal(true);
     }
 
+    function loadPokemons() {
+      var myTeam = localStorage.getItem("myTeam");
+
+
+        if(myTeam === null) {
+
+            localStorage.setItem("myTeam", JSON.stringify([]));
+
+            return [];
+        } else {
+
+            return JSON.parse(myTeam);
+        }
+    }
+
 
     const myTeam = (e) => {
+      const teamPokemons = loadPokemons();
+      teamPokemons.push(pokemonData);
+      localStorage.setItem("myTeam", JSON.stringify(teamPokemons));
 
-        setTeam(true);
+      //setTeam(true);
     }
 
 
@@ -55,7 +73,7 @@ export default function Search() {
     return (
         <div>
             {showModal && <Details pokeinfo={pokemonData} hideModal={hideDetails} />}
-            {addTeam && <Team pokeinfo={pokemonData} />}
+            
             <form onSubmit={submit}>
                 <label>
                     <input type="text"
