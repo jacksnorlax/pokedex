@@ -8,29 +8,7 @@ export default function Details(props) {
     const stats = allInfo.stats;
     const moves = allInfo.moves;
 
-    console.log(allInfo);
-
-
-
-
-    abilities.forEach(function(abi) {
-    console.log(abi.ability.name)
-
-  });
-
-    stats.forEach(function(sta) {
-      console.log(sta.stat.name + " " + sta.base_stat);
-
-
-  });
-
-    moves.forEach(function(moves) {
-
-
-  });
-
-
-
+    
     return (
 
         < Modal show={true} >

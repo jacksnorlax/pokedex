@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useState, UseRef, useEffect } from 'react';
 import { Modal } from 'react-bootstrap';
 import Search from './Search'
 
 
 export default function Team(props) {
 
-  var myTeam = localStorage.getItem("myTeam");
-  var pokeList = props.poke()
-  console.log(pokeList)
-  for (var i = 0; i < pokeList.length; i++) {
-    console.log(pokeList[i][0].name);
-  }
+  // Använd useState();
+  const [pokemons, setPokemons] = useState(props.poke());
 
+
+  function deleteFromTeam(index) {
+    pokemons.splice(index, 1);
+    setPokemons([...pokemons]);
+
+    var updatedList = pokemons;
+    localStorage.setItem("myTeam", JSON.stringify(updatedList));
+
+  }
 
   return (
 
@@ -21,8 +26,9 @@ export default function Team(props) {
         <Modal.Body>
 
           <div>
-            {pokeList.map((data) => <p> {data[0].name} <span>
-            <img src={data[0].sprites["front_default"]} /></span> </p>)}
+            {pokemons.map((data, index) => <p> {data[0].name} <span>
+            <img src={data[0].sprites["front_default"]} /></span>
+             <button onClick={() => deleteFromTeam(index)} className="btn btn-sm btn-danger float-end">x</button> </p>)}
 
 
           </div>
