@@ -12,6 +12,7 @@ export default function Team(props) {
     console.log(pokeList[i][0].name);
   }
 
+
   return (
 
     <div>
@@ -20,6 +21,8 @@ export default function Team(props) {
         <Modal.Body>
 
           <div>
+            {pokeList.map((data) => <p> {data[0].name} <span>
+            <img src={data[0].sprites["front_default"]} /></span> </p>)}
 
 
           </div>
