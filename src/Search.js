@@ -28,7 +28,7 @@ export default function Search() {
 
         setShowModal(true);
     }
-    const showjajaja = (e) => {
+    const show = (e) => {
 
         setShowTeam(true);
     }
@@ -55,6 +55,7 @@ export default function Search() {
         const teamPokemons = loadPokemons();
         teamPokemons.push(pokemonData);
         localStorage.setItem("myTeam", JSON.stringify(teamPokemons));
+        alert(pokemonData[0].name + " been added to your team")
 
 
     }
@@ -88,6 +89,8 @@ export default function Search() {
             {showModal && <Details pokeinfo={pokemonData} hideModal={hideDetails} />}
             {showTeam && <Team hideModal={hideTeam} poke={loadPokemons} />}
 
+
+
             <form onSubmit={submit}>
                 <label>
                     <input type="text"
@@ -108,16 +111,13 @@ export default function Search() {
                             </div>
                             <div>
                                 <div>Height</div>
-                                <div>{" "}{Math.round(data.height * 3.9)}</div>
+                                <div>{" "}{Math.round(data.height * 3.9 * 2.54)} Inches</div>
                             </div>
                             <div>
                                 <div>Weight</div>
                                 <div>{" "}{Math.round(data.weight / 4.3)} lbs</div>
                             </div>
-                            <div>
-                                <div>konstig</div>
-                                <div>{data.abilities.length}</div>
-                            </div>
+
 
 
 
@@ -125,7 +125,7 @@ export default function Search() {
                         </div>
                         <button type="button" className="btn btn-primary" onClick={myTeam}>Add to team</button>
                         <button type="button" className="btn btn-primary" onClick={showDetails}>Details</button>
-                        <button type="button" className="btn btn-primary" onClick={showjajaja}>Show team</button>
+                        <button type="button" className="btn btn-primary" onClick={show}>Show team</button>
 
                     </div>
                 )
