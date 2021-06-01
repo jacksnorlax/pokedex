@@ -3,7 +3,8 @@ Detta projektet är en pokeDex där du som användare kan söka på befinliga po
 
 ## Steg för att köra programmet:
 
-Installera ner Node.js
+Installera ner Node.js.
+Skriv "npm install" i valfri terminal.
 Navigera till projektet i valfri terminal och skriv "npm start"
 
 Det här projektet tillverkades med hjälp av React. Då vi som utvecklare kände oss mest bekväma med att utveckla i React. Det  finns två andra poplära ramverk, Vue och Angular. Dessa två ramverk valdes bort eftersom utvecklarna hade mer erfarenhet av React sen tidigare.  
