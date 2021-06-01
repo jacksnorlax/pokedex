@@ -12,7 +12,7 @@ export default function Details(props) {
     return (
 
         < Modal show={true} >
-            <Modal.Header> {allInfo.name} Pokedex number {allInfo.id}</Modal.Header>
+            <Modal.Header> {allInfo.name} Pokédex number {allInfo.id}</Modal.Header>
             <Modal.Body>
 
             <div>
@@ -22,13 +22,13 @@ export default function Details(props) {
 
 
             </div>
-            <div>
-              Abilities
+            <div className="ModalDetailText">
+              Abilities: 
               {abilities.map((data) => <p> {data.ability.name} </p>)}
             </div>
 
-            <div>
-              Base stats
+            <div className="ModalDetailText">
+              Base stats: 
               {stats.map((data) => <p>{data.stat.name} {data.base_stat} </p>)}
             </div>
 

@@ -99,23 +99,24 @@ export default function Search() {
                     />
                 </label>
             </form>
+            <button type="button" className="btn btn-primary" onClick={show}>Show team</button>
             {pokemonData.map((data) => {
                 return (
                     <div>
                         <img src={data.sprites["front_default"]} />
                         <div>
                             <div> </div>
-                            <div>
-                                <div>Type</div>
-                                <div>{pokemonType}</div>
+                            <div className="divTableRow">
+                                <div className="divTableCell">Type: </div>
+                                <div className="divTableCell">{pokemonType}</div>
                             </div>
-                            <div>
-                                <div>Height</div>
-                                <div>{" "}{Math.round(data.height * 3.9 * 2.54)} Inches</div>
+                            <div className="divTableRow">
+                                <div className="divTableCell">Height: </div>
+                                <div className="divTableCell">{" "}{Math.round(data.height * 3.9 * 2.54)} Inches</div>
                             </div>
-                            <div>
-                                <div>Weight</div>
-                                <div>{" "}{Math.round(data.weight / 4.3)} lbs</div>
+                            <div className="divTableRow">
+                                <div className="divTableCell">Weight: </div>
+                                <div className="divTableCell">{" "}{Math.round(data.weight / 4.3)} lbs</div>
                             </div>
 
 
@@ -125,7 +126,6 @@ export default function Search() {
                         </div>
                         <button type="button" className="btn btn-primary" onClick={myTeam}>Add to team</button>
                         <button type="button" className="btn btn-primary" onClick={showDetails}>Details</button>
-                        <button type="button" className="btn btn-primary" onClick={show}>Show team</button>
 
                     </div>
                 )

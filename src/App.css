@@ -1,55 +1,64 @@
 .App {
   text-align: center;
 }
+body {
+  background: url("http://i.imgur.com/eVcYPSa.png") no-repeat center fixed;
+  background-size: 100%;
+  background-size: cover;
+}
 
-.divTable{
+h1{
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.divTable {
   display: table;
   max-width: 20em;
   float: right;
   display: flex;
   align-items: center;
 }
-
-.divTableRow{
+.divTableRow {
   display: table-row;
 }
-
-.divTableHeading{
+.divTableHeading {
   background-color: #eee;
   display: table-header-group;
-  font-weight: bold;
 }
-
 .divTableCell,
-.divTableHead{
+.divTableHead {
   border: 1px solid #999999;
   display: table-cell;
   padding: 3px 10px;
 }
-
-.dibTableFoot{
+.divTableHeading {
+  background-color: #eee;
+  display: table-header-group;
+  font-weight: bold;
+}
+.divTableFoot {
   background-color: #eee;
   display: table-footer-group;
   font-weight: bold;
 }
-
-.divTableBody{
+.divTableBody {
   display: table-row-group;
 }
 
-.divTableCell:nth-child(1n){
+.divTableCell:nth-child(odd) {
   background-color: gainsboro;
 }
 
-container{
+.container {
   display: flex;
   opacity: 0.9;
-  background-color: #99aaab;
+  background-color: whitesmoke;
   justify-content: center;
 }
 
-img{
-  height: 16em;
+img {
+  height: 15em;
 }
 
 input {
@@ -60,7 +69,21 @@ input {
   margin: 2rem auto;
 }
 
-body{
-  background-image: url("https://images.unsplash.com/photo-1542779283-429940ce8336?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
-  background-size: 150%;
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(221, 44, 44);
+  color: white;
+  text-align: center;
+}
+
+.ModalDetailText{
+  text-align: center;
+  font-weight: bold;
+}
+
+.modal-content{
+  background-color: red;
 }
