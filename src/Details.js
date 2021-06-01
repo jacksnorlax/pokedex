@@ -12,7 +12,7 @@ export default function Details(props) {
     return (
 
         < Modal show={true} >
-            <Modal.Header> {allInfo.name} Pokédex number {allInfo.id}</Modal.Header>
+            <Modal.Header> <h2 class="modal-title w-100">{allInfo.name}</h2></Modal.Header>
             <Modal.Body>
 
             <div>
@@ -23,19 +23,19 @@ export default function Details(props) {
 
             </div>
             <div className="ModalDetailText">
-              Abilities: 
+              <h4>Abilities:</h4> 
               {abilities.map((data) => <p> {data.ability.name} </p>)}
             </div>
 
             <div className="ModalDetailText">
-              Base stats: 
+              <h4>Base stats:</h4> 
               {stats.map((data) => <p>{data.stat.name} {data.base_stat} </p>)}
             </div>
 
 
 
             </Modal.Body>
-            <Modal.Footer><button onClick={props.hideModal}> Close</button></Modal.Footer>
+            <Modal.Footer><button className="btn btn-primary" onClick={props.hideModal}> Close</button></Modal.Footer>
 
         </Modal >
 

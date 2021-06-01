@@ -23,7 +23,7 @@ export default function Team(props) {
 
     <div>
       < Modal show={true} >
-        <Modal.Header> <h2>Your team:</h2></Modal.Header>
+        <Modal.Header> <h2>Your team: </h2></Modal.Header>
         <Modal.Body>
 
           <div>
@@ -36,22 +36,10 @@ export default function Team(props) {
 
           </div>
 
-          <div>
-
-
-          </div>
-          <div>
-
-          </div>
-
-          <div>
-
-          </div>
-
 
 
         </Modal.Body>
-        <Modal.Footer><button onClick={props.hideModal}> Close</button></Modal.Footer>
+        <Modal.Footer><button type="button" className="btn btn-primary" onClick={props.hideModal}>Close</button></Modal.Footer>
 
       </Modal >
 
